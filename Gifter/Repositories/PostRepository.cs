@@ -202,10 +202,11 @@ namespace Gifter.Repositories
                     var reader = cmd.ExecuteReader();
 
                     Post post = null;
-                    if (reader.Read())
+                    while (reader.Read())
+                        //using while loop to be able to get all comments
                     {
-                                                                  
-                        
+                        if (post == null)
+                            //post is = to null so you can stop it from going to other posts to pull info
                         {
                             post = new Post()
                             {
@@ -223,9 +224,10 @@ namespace Gifter.Repositories
                                     DateCreated = DbUtils.GetDateTime(reader, "UserProfileDateCreated"),
                                     ImageUrl = DbUtils.GetString(reader, "UserProfileImageUrl"),
                                 },
-                                Comments = new List<Comment>()
+                                //Comments = new List<Comment>()  
+                                // did not need this instantiate because I added it to post model instead
                             };
-                                                        
+                                                    
                         }
 
                         if (DbUtils.IsNotDbNull(reader, "CommentId"))
