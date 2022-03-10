@@ -12,5 +12,6 @@ namespace Gifter.Repositories
         void Update(Post post);
 
         List<Post> GetAllWithComments();
+        Post GetPostByIdWithComments(int id);
     }
 }
