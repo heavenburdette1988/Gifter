@@ -5,7 +5,6 @@ C:\Users\heave\workspace\NewForce-Backend\ReactCSharp\Gifter\Gifter\bin\Debug\ne
 C:\Users\heave\workspace\NewForce-Backend\ReactCSharp\Gifter\Gifter\bin\Debug\net5.0\Gifter.runtimeconfig.json
 C:\Users\heave\workspace\NewForce-Backend\ReactCSharp\Gifter\Gifter\bin\Debug\net5.0\Gifter.runtimeconfig.dev.json
 C:\Users\heave\workspace\NewForce-Backend\ReactCSharp\Gifter\Gifter\bin\Debug\net5.0\Gifter.dll
-C:\Users\heave\workspace\NewForce-Backend\ReactCSharp\Gifter\Gifter\bin\Debug\net5.0\ref\Gifter.dll
 C:\Users\heave\workspace\NewForce-Backend\ReactCSharp\Gifter\Gifter\bin\Debug\net5.0\Gifter.pdb
 C:\Users\heave\workspace\NewForce-Backend\ReactCSharp\Gifter\Gifter\bin\Debug\net5.0\Azure.Core.dll
 C:\Users\heave\workspace\NewForce-Backend\ReactCSharp\Gifter\Gifter\bin\Debug\net5.0\Azure.Identity.dll
@@ -49,3 +48,8 @@ C:\Users\heave\workspace\NewForce-Backend\ReactCSharp\Gifter\Gifter\obj\Debug\ne
 C:\Users\heave\workspace\NewForce-Backend\ReactCSharp\Gifter\Gifter\obj\Debug\net5.0\ref\Gifter.dll
 C:\Users\heave\workspace\NewForce-Backend\ReactCSharp\Gifter\Gifter\obj\Debug\net5.0\Gifter.pdb
 C:\Users\heave\workspace\NewForce-Backend\ReactCSharp\Gifter\Gifter\obj\Debug\net5.0\Gifter.genruntimeconfig.cache
+C:\Users\heave\workspace\NewForce-Backend\ReactCSharp\Gifter\Gifter\obj\Debug\net5.0\refint\Gifter.dll
+C:\Users\heave\workspace\NewForce-Backend\ReactCSharp\Gifter\Gifter\bin\Debug\net5.0\client\my-gifter\package-lock.json
+C:\Users\heave\workspace\NewForce-Backend\ReactCSharp\Gifter\Gifter\bin\Debug\net5.0\client\my-gifter\package.json
+C:\Users\heave\workspace\NewForce-Backend\ReactCSharp\Gifter\Gifter\bin\Debug\net5.0\client\my-gifter\public\manifest.json
+C:\Users\heave\workspace\NewForce-Backend\ReactCSharp\Gifter\Gifter\bin\Debug\net5.0\client\package-lock.json

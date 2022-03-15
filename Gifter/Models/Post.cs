@@ -6,6 +6,12 @@ namespace Gifter.Models
 {
     public class Post
     {
+
+        //instanciate the date so the required DateCreated will always have date  
+        public Post()
+        {
+            DateCreated = DateTime.Now;
+        }
         public int Id { get; set; }
 
         [Required]
@@ -16,7 +22,7 @@ namespace Gifter.Models
 
         public string Caption { get; set; }
 
-        [Required]
+        //[Required]  removing required so we can generate in c#
         public DateTime DateCreated { get; set; }
 
         [Required]

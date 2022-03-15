@@ -263,7 +263,7 @@ namespace Gifter.Repositories
 
                     DbUtils.AddParameter(cmd, "@Title", post.Title);
                     DbUtils.AddParameter(cmd, "@Caption", post.Caption);
-                    DbUtils.AddParameter(cmd, "@DateCreated", post.DateCreated);
+                    DbUtils.AddParameter(cmd, "@DateCreated", DateTime.Now);
                     DbUtils.AddParameter(cmd, "@ImageUrl", post.ImageUrl);
                     DbUtils.AddParameter(cmd, "@UserProfileId", post.UserProfileId);
 
@@ -375,7 +375,7 @@ namespace Gifter.Repositories
 
 
         //Add a new endpoint, /api/post/hottest?since=<SOME_DATE> that will return posts created on or after the provided date.
-        public List<Post> SearchByDate( DateTime since)
+        public List<Post> SearchByDate(DateTime since)
         {
             using (var conn = Connection)
             {
