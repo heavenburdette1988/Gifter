@@ -36,7 +36,8 @@ namespace Gifter.Controllers
         public IActionResult Post(Post post)
         {
             _postRepository.Add(post);
-            return CreatedAtAction("Get", new { id = post.Id }, post);
+            //return CreatedAtAction("Get", new { id = post.Id }, post);
+            return NoContent();
         }
 
         [HttpPut("{id}")]

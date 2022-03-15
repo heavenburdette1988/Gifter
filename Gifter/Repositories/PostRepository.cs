@@ -342,6 +342,7 @@ namespace Gifter.Repositories
 
                     cmd.CommandText = sql;
                     DbUtils.AddParameter(cmd, "@Criterion", $"%{criterion}%");
+                    //wild card $"%{}%
                     var reader = cmd.ExecuteReader();
 
                     var posts = new List<Post>();
