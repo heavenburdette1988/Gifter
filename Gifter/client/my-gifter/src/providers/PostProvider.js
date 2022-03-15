@@ -22,9 +22,14 @@ export const PostProvider = (props) => {
     }).then(getAllPosts);
   
   };
-
+  const searchPost = (query) => {
+    return fetch(`https://localhost:44369/api/Post/search?q=${query}`)
+    .then((res) => res.json())
+    .then(setPosts);
+  };
+  
   return (
-    <PostContext.Provider value={{ posts, getAllPosts, addPost }}>
+    <PostContext.Provider value={{ posts, getAllPosts, addPost, searchPost }}>
       {props.children}
     </PostContext.Provider>
   );

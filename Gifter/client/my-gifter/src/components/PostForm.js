@@ -4,7 +4,7 @@ import { PostContext } from "../providers/PostProvider"
 import Post from "./Post";
 
 
-export const PostForm = () => {
+const PostForm = () => {
     const {getAllPosts,addPost} = useContext(PostContext)
 
     const [post, setPost] = useState({
@@ -29,9 +29,16 @@ export const PostForm = () => {
 
     const handleSavePost = (event) => {
         event.preventDefault()
-        addPost(post)
-       
+
+        if(post.title === "" || post.imageUrl ==="" )
+        {
+            alert("Please fill out the title and/or image url fields.")
+        } else {
+            addPost(post)
+     }
+      
     }
+    
     return(
         <form className="postForm">
             {/* form tags sends http request back to controller so that is why we used preventdefault  - telling form do not send anything to server bc we want to send the http request*/}
