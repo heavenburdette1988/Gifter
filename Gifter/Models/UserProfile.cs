@@ -25,3 +25,10 @@ namespace Gifter.Models
 
     }
 }
+
+//ch 7 notes 
+//register  React register form  
+//http post in controller for user  post fetch call for user profile 
+//c# addnew user method in userprofiles and we will need to tell it ti create a new id in the object - login components 
+//Login form 
+//http get user controller  -  get user by Id method

@@ -5,6 +5,44 @@ export const UserProfileContext = React.createContext();
 export const UserProfileProvider = (props) => {
     const [users, setUsers] = useState([]);
 
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    const getCurrentUser = () => {
+        const currentUser = localStorage.getItem("gifterUser");
+    
+        return currentUser;
+      };
+
+      const login = (userObject) => {
+        
+        fetch(`api/userprofile/getbyemail?email=${userObject.email}`)
+          .then((r) => r.json())
+          .then((userObjFromDB) => {
+    
+            localStorage.setItem("gifterUser", JSON.stringify(userObjFromDB));
+            setIsLoggedIn(true);
+          })
+      };
+
+      const register = (userObject) => {
+        fetch("/api/userprofile", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userObject),
+        })
+          .then((response) => response.json())
+          .then((userObject) => {
+            localStorage.setItem("gifterUser", JSON.stringify(userObject));
+          });
+      };
+    
+      const logout = () => {
+        localStorage.clear();
+        setIsLoggedIn(false);
+      };
+
     const getAllUsers = () => {
         return fetch(`https://localhost:44369/api/userprofile`)
         .then((res) => res.json())
@@ -17,7 +55,7 @@ export const UserProfileProvider = (props) => {
     };         
 
     return (
-        <UserProfileContext.Provider value={{ users, getAllUsers, getUser }}>
+        <UserProfileContext.Provider value={{ users, isLoggedIn, getAllUsers, getUser, getCurrentUser, register, logout,login }}>
             {props.children}
         </UserProfileContext.Provider>
     );

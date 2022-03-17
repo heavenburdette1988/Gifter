@@ -104,7 +104,9 @@ namespace Gifter.Repositories
                     var reader = cmd.ExecuteReader();
 
                     UserProfile user = null;
+
                     var posts = new List<Post>();
+
                     while (reader.Read())
                     {
                         if (user == null)
@@ -117,7 +119,6 @@ namespace Gifter.Repositories
                                 DateCreated = DbUtils.GetDateTime(reader, "UserProfileDateCreated"),
                                 ImageUrl = DbUtils.GetString(reader, "UserProfileImageUrl"),
                                 Bio = DbUtils.GetString(reader, "Bio"),
-
                                 Posts = posts
                             };
                         }
@@ -233,6 +234,41 @@ namespace Gifter.Repositories
                     cmd.CommandText = "DELETE FROM UserProfile WHERE Id = @Id";
                     DbUtils.AddParameter(cmd, "@id", id);
                     cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public UserProfile GetByEmail(string email)
+        {
+            using (var conn = Connection)
+            {
+                conn.Open();
+                using (var cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"
+                          SELECT Id, Name, Email, ImageUrl, Bio, DateCreated FROM UserProfile WHERE Email = @email";
+                    cmd.Parameters.AddWithValue("@email", email);
+
+
+
+                    var reader = cmd.ExecuteReader();
+
+                    UserProfile user = null;
+                    if (reader.Read())
+                    {
+                        user = new UserProfile()
+                        {
+                            Id = DbUtils.GetInt(reader, "iD"),
+                            Name = DbUtils.GetString(reader, "Name"),
+                            Email = DbUtils.GetString(reader, "Email"),
+                            DateCreated = DbUtils.GetDateTime(reader, "DateCreated"),
+                            ImageUrl = DbUtils.GetString(reader, "ImageUrl")
+                        };
+                    }
+
+                    reader.Close();
+
+                    return user;
                 }
             }
         }

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { PostContext } from "../providers/PostProvider";
+import { PostContext } from "../../providers/PostProvider";
 import Post from "./Post";
 //1. to print an empty form
     //2. as the user type, we need to update the state

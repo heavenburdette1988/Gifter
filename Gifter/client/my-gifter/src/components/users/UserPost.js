@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { UserProfileContext } from "../providers/UserProfileProvider";
-import Post from "./Post";
+import { UserProfileContext } from "../../providers/UserProfileProvider";
+import Post from "../posts/Post";
 
 const UserPosts = () => {
     const [ user, setUser ] = useState();

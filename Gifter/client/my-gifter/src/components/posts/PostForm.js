@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from "react"
-import { PostContext } from "../providers/PostProvider"
+import { PostContext } from "../../providers/PostProvider"
 import { useNavigate } from "react-router-dom";
 import Post from "./Post";
 
@@ -11,7 +11,7 @@ const PostForm = () => {
         title: "",
         imageUrl: "",
         caption:"",
-        userProfileId: 1
+        userProfileId: JSON.parse(localStorage.getItem("gifterUser")).id
     });
 
     const navigate = useNavigate();

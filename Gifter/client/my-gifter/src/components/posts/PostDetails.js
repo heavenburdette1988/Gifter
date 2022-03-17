@@ -1,6 +1,6 @@
 import React, { useEffect, useContext, useState } from "react";
 import { ListGroup, ListGroupItem } from "reactstrap";
-import { PostContext } from "../providers/PostProvider";
+import { PostContext } from "../../providers/PostProvider";
 import { useParams } from "react-router-dom";
 import Post from "./Post";
 
