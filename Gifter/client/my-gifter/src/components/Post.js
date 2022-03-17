@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, CardImg, CardBody } from "reactstrap";
+import { Link } from "react-router-dom";
 
 const Post = ({ postProp }) => {
   return (
@@ -7,9 +8,9 @@ const Post = ({ postProp }) => {
       <p className="text-left px-2">Posted by: {postProp.userProfile.name}</p>
       <CardImg top src={postProp.imageUrl} alt={postProp.title} />
       <CardBody>
-        <p>
+      <Link to={`/posts/${postProp.id}`}>
           <strong>{postProp.title}</strong>
-        </p>
+          </Link>
         <p>{postProp.caption}</p>
       </CardBody>
     </Card>

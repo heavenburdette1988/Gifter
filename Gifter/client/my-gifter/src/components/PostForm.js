@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from "react"
 import { PostContext } from "../providers/PostProvider"
-
+import { useNavigate } from "react-router-dom";
 import Post from "./Post";
 
 
@@ -13,6 +13,8 @@ const PostForm = () => {
         caption:"",
         userProfileId: 1
     });
+
+    const navigate = useNavigate();
 
     useEffect(()=> {
         getAllPosts()
@@ -35,6 +37,7 @@ const PostForm = () => {
             alert("Please fill out the title and/or image url fields.")
         } else {
             addPost(post)
+            .then(navigate("/"));
      }
       
     }

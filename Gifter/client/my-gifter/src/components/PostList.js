@@ -7,6 +7,7 @@ const PostList = () => {
   //state varible^^  we do this with info that will change like adding a post to post
 
   useEffect(() => {
+    
     getAllPosts();
   }, []);
 
