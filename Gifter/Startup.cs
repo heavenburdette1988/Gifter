@@ -30,6 +30,8 @@ namespace Gifter
 
             services.AddControllers();
             services.AddTransient<IPostRepository, PostRepository>();
+            services.AddTransient<IUserProfileRepository, UserProfileRepository>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Gifter", Version = "v1" });
@@ -44,7 +46,14 @@ namespace Gifter
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Gifter v1"));
-            }
+                app.UseCors(options =>
+                {
+                    options.AllowAnyOrigin();
+                    options.AllowAnyMethod();
+                    options.AllowAnyHeader();
+                });
+            
+        }
 
             app.UseHttpsRedirection();
 
