@@ -53,6 +53,9 @@ namespace Gifter.Controllers
             }
             return Ok(user);
         }
+
+
+
         [HttpGet("UserPosts/{id}")]
         public IActionResult GetPostIdWithComments(int id)
         {
