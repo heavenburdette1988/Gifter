@@ -17,13 +17,21 @@ export const UserProfileProvider = (props) => {
       const login = (userObject) => {
         
         return fetch(`api/userprofile/getbyemail?email=${userObject.email}`)
+        
           .then((r) => r.json())
           .then((userObjFromDB) => {
                 localStorage.setItem("gifterUser", JSON.stringify(userObjFromDB));
+                if(userObjFromDB.status !== 404){
+                setIsLoggedIn(true)
+            } else {
+                    setIsLoggedIn(false)
+                }
+                console.log(userObjFromDB)
           })
-          .then(() => setIsLoggedIn(true))
+        //   .then(() => setIsLoggedIn(true))
+        //chaining
       };
-
+    
       const register = (userObject) => {
         fetch("/api/userprofile", {
           method: "POST",
