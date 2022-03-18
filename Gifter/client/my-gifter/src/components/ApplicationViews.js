@@ -43,7 +43,6 @@ const ApplicationViews = () => {
     }
     else{
         return(
-            <UserProfileProvider>
             <Routes>        
             <Route path ="login" element={<Login/>}/>   
             <Route
@@ -51,7 +50,6 @@ const ApplicationViews = () => {
         element={<Navigate to="login" />}
     />
             </Routes>
-            </UserProfileProvider>
         )
     }
 };

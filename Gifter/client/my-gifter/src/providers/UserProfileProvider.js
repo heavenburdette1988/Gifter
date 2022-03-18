@@ -7,6 +7,7 @@ export const UserProfileProvider = (props) => {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+
     const getCurrentUser = () => {
         const currentUser = localStorage.getItem("gifterUser");
     
@@ -15,13 +16,12 @@ export const UserProfileProvider = (props) => {
 
       const login = (userObject) => {
         
-        fetch(`api/userprofile/getbyemail?email=${userObject.email}`)
+        return fetch(`api/userprofile/getbyemail?email=${userObject.email}`)
           .then((r) => r.json())
           .then((userObjFromDB) => {
-    
-            localStorage.setItem("gifterUser", JSON.stringify(userObjFromDB));
-            setIsLoggedIn(true);
+                localStorage.setItem("gifterUser", JSON.stringify(userObjFromDB));
           })
+          .then(() => setIsLoggedIn(true))
       };
 
       const register = (userObject) => {
