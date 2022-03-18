@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 export const UserProfileContext = React.createContext();
 
 export const UserProfileProvider = (props) => {
@@ -22,11 +23,15 @@ export const UserProfileProvider = (props) => {
           .then((userObjFromDB) => {
                 localStorage.setItem("gifterUser", JSON.stringify(userObjFromDB));
                 if(userObjFromDB.status !== 404){
+                    
                 setIsLoggedIn(true)
             } else {
+                debugger
                     setIsLoggedIn(false)
+                    //can add navigate to register
+                    
                 }
-                console.log(userObjFromDB)
+                
           })
         //   .then(() => setIsLoggedIn(true))
         //chaining
@@ -43,6 +48,7 @@ export const UserProfileProvider = (props) => {
           .then((response) => response.json())
           .then((userObject) => {
             localStorage.setItem("gifterUser", JSON.stringify(userObject));
+            setIsLoggedIn(true)
           });
       };
     

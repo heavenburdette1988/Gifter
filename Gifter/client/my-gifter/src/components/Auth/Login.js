@@ -30,6 +30,10 @@ export const Login = () => {
             Log In
           </button>
         </form>
+        {/* <button>
+        <link to="/register">Register</link>
+        </button> */}
+
       </>
     </>
   );

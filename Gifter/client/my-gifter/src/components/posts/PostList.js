@@ -11,12 +11,13 @@ const PostList = () => {
     getAllPosts();
   }, []);
 
+  const user = JSON.parse(localStorage.getItem("gifterUser"))
   return (
     
     <div className="container">
       <div className="row justify-content-center">
         <div className="cards-column">
-          {posts.map((singlePostInLoop) => (
+          {posts.filter(p => p.userProfileId === user.id).map((singlePostInLoop) => (
             <Post key={singlePostInLoop.id} postProp={singlePostInLoop} />
             // post={singlePostInLoop}  this is passing props}
           ))}

@@ -9,6 +9,7 @@ import UserPosts from "./users/UserPost";
 import { UserProfileProvider } from "../providers/UserProfileProvider";
 import { Login } from "./Auth/Login";
 import { UserProfileContext } from "../providers/UserProfileProvider";
+import { Register } from "./Auth/Register";
 // import { Register } from "./Auth/Register";
 
 
@@ -17,11 +18,10 @@ const ApplicationViews = () => {
   const {isLoggedIn } = useContext(UserProfileContext);
 
     if (isLoggedIn){
+        //can make if(!isLoggedIn){  but would have to flip conditional 
     
   return (
-
-
-    
+   
   <PostProvider>
      
     <Routes>
@@ -29,6 +29,7 @@ const ApplicationViews = () => {
 
       <Route path="/posts/add" element={<PostForm />} />
       <Route path="/user/:id" element={<UserPosts/>} />
+      
     {/* <Route path ="register" element={<Register/>}/> */}
       {/* <Route path="/posts/:id" element={<PostDetails/>} />   */}
       {/* need to change to form detail */}
@@ -44,11 +45,13 @@ const ApplicationViews = () => {
     else{
         return(
             <Routes>        
-            <Route path ="login" element={<Login/>}/>   
+            <Route path ="login" element={<Login/>}/>
+            {/* <Route path ="register" element={<Register/>}/>     */}
             <Route
         path="*"
         element={<Navigate to="login" />}
     />
+     
             </Routes>
         )
     }

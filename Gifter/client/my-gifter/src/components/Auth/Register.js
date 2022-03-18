@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { UserContext } from "../providers/UserProvider";
+import { UserProfileContext } from "../../providers/UserProfileProvider";
 
 export const Register = () => {
   // Create state variables for each form field
@@ -9,8 +9,8 @@ export const Register = () => {
   const [imageurl, setImageurl] = useState("");
 
   // Import the register function from our context-- we'll use this when they click submit
-  const { register } = useContext(UserContext);
-
+  const { register } = useContext(UserProfileContext);
+ 
   // This function will run when the user has finished filling out the form and clicks submit
   const submitLoginForm = (e) => {
     e.preventDefault();
