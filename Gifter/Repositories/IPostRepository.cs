@@ -17,5 +17,7 @@ namespace Gifter.Repositories
 
         List<Post> Search(string criterion, bool sortDescending);
         List<Post> SearchByDate( DateTime since);
+
+
     }
 }
